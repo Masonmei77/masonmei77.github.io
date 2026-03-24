@@ -90,3 +90,27 @@ role-tables:
         </section>
     {% endfor %}
 </div>
+
+<!-- ================= 新增：背景音乐与悬浮按钮模块 ================= -->
+<!-- 请将 src 替换为你上传到 github 的音频路径，例如 /assets/bg_music.mp3 -->
+<audio id="bg-music" loop>
+    <source src="/img/Autumn Romance.ogg" type="audio/mpeg">
+</audio>
+
+<button id="music-btn" onclick="toggleMusic()" title="播放/暂停背景音乐">🎵</button>
+
+<script>
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            btn.classList.add('rotating');
+        } else {
+            music.pause();
+            btn.classList.remove('rotating');
+        }
+    }
+</script>
+<!-- ============================================================== -->
